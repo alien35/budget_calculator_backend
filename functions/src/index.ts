@@ -25,7 +25,12 @@ v1.get('/items', async (req: any, res: any) => {
   await handleItems(req, res);
 })
 
-const runtimeOpts: {timeoutSeconds: number, memory: '512MB'} = {
+type runTimeOptsType = {
+  timeoutSeconds: number,
+  memory: '512MB' | '256MB' | '1GB'
+}
+
+const runtimeOpts: runTimeOptsType = {
   timeoutSeconds: 30,
   memory: '512MB'
 }
